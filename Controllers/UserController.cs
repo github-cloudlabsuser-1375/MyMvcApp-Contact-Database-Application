@@ -99,4 +99,12 @@ public class UserController : Controller
             userlist.Remove(user);
             return RedirectToAction(nameof(Index));
         }
+
+        public ActionResult SearchByName(string name)
+        {
+            var results = userlist
+                .Where(u => u.Name.Contains(name ?? string.Empty, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+            return View("Index", results);
+        }
 }

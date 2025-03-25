@@ -6,6 +6,11 @@
 
 <h2>Index</h2>
 
+<form asp-controller="User" asp-action="SearchByName" method="get">
+    <input type="text" name="name" placeholder="Buscar por nombre" />
+    <button type="submit">Buscar</button>
+</form>
+
 <p>
     @Html.ActionLink("Create New", "Create", "User")
 </p>
